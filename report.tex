@@ -1,0 +1,41 @@
+%----------------------------------------------------------
+% Number of pages for Synopsis: 30 to 50
+%----------------------------------------------------------
+% List of command to convert report.tex to report.pdf
+%----------------------------------------------------------
+%pdflatex report.tex
+%evince report.pdf &
+%\documentstyle[12pt,a4,graphicx]{report}
+\documentclass[12pt]{report}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\bibliographystyle{plain}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+\input{internship_title.tex}
+\input{spit_certificate.tex}
+
+\input{acknowledgments.tex}
+\input{abstract.tex}
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\pagenumbering{gobble}
+\pagebreak
+\pagenumbering{roman}
+\pagebreak
+\listoffigures
+\pagebreak
+\listoftables
+\pagebreak
+\input{list_abbreviations.tex}
+\pagebreak
+\pagenumbering{arabic}
+\input{introduction.tex}
+\input{learning_objectives.tex}
+\input{monthly_overview.tex}
+\input{results_discussion.tex}
+\input{conclusion.tex}
+\input{bibliography.tex}
+\end{document}
